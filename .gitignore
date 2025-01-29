@@ -1,1 +1,10 @@
 /venv/
+
+*.txt
+*.pyc
+*.pyo
+*.log
+
+commands.md
+
+Makefile
