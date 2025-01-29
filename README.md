@@ -43,6 +43,11 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 pip install -r requirements.txt
 ```
 
+## Run Program
+```bash
+python main.py
+```
+
 ## Usage
 
 To start using CODER, run the main script:
