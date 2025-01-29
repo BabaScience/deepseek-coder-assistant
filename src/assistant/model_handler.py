@@ -32,7 +32,22 @@ class ModelHandler:
                 pad_token_id=self.tokenizer.eos_token_id
             )
             
-            return self.tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
+            generated_text = self.tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
+            
+            # Remove code block wrapping
+            if generated_text.startswith("```"):
+                # Find the first newline after the opening ```
+                first_newline = generated_text.find('\n')
+                if first_newline != -1:
+                    # Remove the opening ```
+                    code = generated_text[first_newline + 1:]
+                    # Remove the closing ```
+                    if "```" in code:
+                        code = code[:code.rindex("```")]
+                    return code.strip()
+            
+            return generated_text.strip()
         except Exception as e:
             logger.error(f"Error generating code: {str(e)}")
             raise
+
