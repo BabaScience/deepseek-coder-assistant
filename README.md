@@ -7,7 +7,7 @@ CODER
 CODER is a Prompt-To-Code Python project designed to help developers write and manage their code efficiently with the help of LLM. This project includes various tools and utilities to enhance the coding experience with prompts. All operations and data processing are performed locally to ensure privacy and security.
 
 ## Note
-- This project is tested only on MacOS.
+- This project is tested only on MacOS & Windows.
 - Goal: to make an AI agent that helps developers build project faster, with a local LLM.
 - Author: Bamba Ba.
 - Contact: lebabamath@gmail.com
@@ -28,14 +28,24 @@ To install the necessary dependencies, follow these steps:
 python3 -m venv venv
 ```
 
-### Activate it (On macOS/Linux):
+### Activate it:
+On Mac:
 ```bash
 source venv/bin/activate
 ```
+On Windows:
+```bash
+.\venv\Scripts\activate
+```
 
 ### Manually Install Pytorch
+On Mac:
 ```bash
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+```
+On Windows:
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 ### Install dependencies
