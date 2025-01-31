@@ -17,7 +17,7 @@ class ProjectFileHandler:
         self.config = self.load_config()
         self.changes = []
         
-        def load_gitignore(self, project_path):
+    def load_gitignore(self, project_path):
         """Load and parse .gitignore file if it exists."""
         gitignore_path = os.path.join(project_path, '.gitignore')
         if os.path.exists(gitignore_path):
